@@ -1,0 +1,121 @@
+:root {
+  --grad1: linear-gradient(135deg, #008080, #002080);
+  --grad1b: linear-gradient(135deg, #01c2c2, #022ca8);
+  --grad2: linear-gradient(180deg, #b3002d00, #b3002d88);
+  --grad3: linear-gradient(90deg, #73009a00, #73009a88);
+  font-size: 16px;
+  font-family: 'Quicksand', sans-serif;
+  color: whitesmoke;
+}
+
+/* font-family: 'Quicksand', sans-serif;
+font-family: 'Rubik', sans-serif; */
+
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  /* background: linear-gradient(0deg, #ffffff, #000000); */
+  /* background: var(--grad2), var(--grad3), var(--grad1); */
+  background: var(--grad2), var(--grad3), var(--grad1b);
+
+  display: flex;
+  align-content: space-between;
+  justify-content: center;
+  background-size: 300vw 300vh;
+  background-position: 0% 0%;
+  transition: background-position 0.8s ease-out;
+}
+
+main {
+  padding: 24px;
+}
+
+main, main>div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.center-text {
+  text-align: center;
+}
+
+#grad1 {
+  background: var(--grad1);
+}
+
+#grad2 {
+  background: var(--grad2);
+}
+
+#grad3 {
+  background: var(--grad3);
+}
+
+h1 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 2.4rem;
+  margin: 6px;
+}
+
+h2 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.6rem;
+  margin: 8px 0 4px 0;
+}
+
+p {
+  font-family: 'Quicksand', sans-serif;
+  /* color: whitesmoke; */
+  font-size: 1.2rem;
+  margin: 4px 0;
+}
+
+button {
+  /* position: fixed; */
+  bottom: 0;
+  left: 0;
+  height: 80px;
+  width: 30%;
+  background-color: rgba(0, 0, 0, 0.397);
+  color: whitesmoke;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 24px;
+}
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+
+/* h1:nth-child(3) {
+  text-decoration-color: red;
+}
+
+h1:nth-child(2){
+  text-decoration: underline;
+  text-decoration-color: blue;
+} */
+
+#re1 {
+  text-decoration: underline;
+  text-decoration-color: #01c2c2;
+}
+
+#re2 {
+  text-decoration: underline;
+  text-decoration-color: #b3002d;
+}
+
+#ad {
+  text-decoration: underline;
+  text-decoration-color: #73009a;
+}
