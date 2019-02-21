@@ -23,7 +23,7 @@ Upcoming side project
 Should this be a "user story" checklist?
 - [ ] "Hello world" 
   - [x] On Android emulator (Linux)
-  - [ ] On iPhone emulator
+  - [x] On iPhone emulator
   - [ ] On Android emulator (iOS)
 - [ ] Home screen with app name and explanation
 - [ ] Navigation bar
