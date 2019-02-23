@@ -1,53 +1,48 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- * @lint-ignore-every XPLATJSCOPYRIGHT1
- */
+// In App.js in a new project
 
-import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-import Home from './screens/Home'
+import React from "react";
+import { View, Text, StyleSheet } from "react-native";
+import { createStackNavigator, createAppContainer } from "react-navigation";
+import Home from "./screens/Home";
+import Reflect from "./screens/Reflect";
 
+const screen = Comp => {
+  return props => (
+    <View style={styles.container}>
+      <Comp {...props} />
+    </View>
+  );
+};
 
-// const instructions = Platform.select({
-//   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-//   android:
-//     'Double tap R on your keyboard to reload,\n' +
-//     'Shake or press menu button for dev menu',
-// });
-
-type Props = {};
-
-export default class App extends Component<Props> {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Home />
-      </View>
-    );
+const AppNavigator = createStackNavigator(
+  {
+    Home: screen(Home),
+    Reflect: screen(Reflect)
+  },
+  {
+    InitialRouteName: "Home"
   }
-}
+);
+
+export default createAppContainer(AppNavigator);
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    justifyContent: "space-between",
+    alignItems: "center",
     backgroundColor: "pink"
   },
   welcome: {
     fontSize: 30,
-    color: 'red',
-    textAlign: 'center',
-    margin: 10,
+    color: "red",
+    textAlign: "center",
+    margin: 10
   },
   instructions: {
-    textAlign: 'center',
-    color: '#333333',
+    textAlign: "center",
+    color: "#333333",
     marginBottom: 5,
     fontSize: 20
-  },
+  }
 });

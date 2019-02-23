@@ -12,7 +12,10 @@ export default class Home extends Component {
     return (
       <View>
         <Text>Hi! What would you like to reflect on?</Text>
-        <Button text={appData.reflectionButtonText} onPress={} />
+        <Button
+          text={appData.reflectionButtonText}
+          onPress={() => this.props.navigation.navigate("Reflect")}
+        />
       </View>
     );
   }
