@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 import Button from "../components/Button";
+import { Provider } from "react-redux";
+import { store } from "../redux/index";
 
 export default class Home extends Component {
   state = {
@@ -10,13 +12,15 @@ export default class Home extends Component {
 
   render() {
     return (
-      <View>
-        <Text>Hi! What would you like to reflect on?</Text>
-        <Button
-          text={appData.reflectionButtonText}
-          onPress={() => this.props.navigation.navigate("Reflect")}
-        />
-      </View>
+      <Provider store={store}>
+        <View>
+          <Text>Hi! What would you like to reflect on?</Text>
+          <Button
+            text={appData.reflectionButtonText}
+            onPress={() => this.props.navigation.navigate("Reflect")}
+          />
+        </View>
+      </Provider>
     );
   }
 }
