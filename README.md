@@ -45,3 +45,19 @@ Should this be a "user story" checklist?
 ### Major stretch goals
 - [ ] "Private"/initially hidden habits
 - [ ] Sharing/publishing reflections for others to "remind" with (big goal!)
+
+## User questions
+### First draft:
+- What would you like to reflect on?
+
+GOOD:
+- What benefits do you get from it?
+- How would you feel after managing to do it?
+- How would your life be different if you kept it up for a year?
+- What are some easier alternatives?
+
+BAD:
+- Why do you want to do it? (or: "What benefits do you get from it?")
+- Would you still feel this benefits a few hours after?
+- What would be different if you avoided it for a year?
+- What are some better alternatives that you could do?

@@ -9,23 +9,23 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
+import Home from './screens/Home'
 
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+// const instructions = Platform.select({
+//   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
+//   android:
+//     'Double tap R on your keyboard to reload,\n' +
+//     'Shake or press menu button for dev menu',
+// });
 
 type Props = {};
+
 export default class App extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>reread</Text>
-        <Text style={styles.instructions}>This is App.js. Hello from Dom and Helen!</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <Home />
       </View>
     );
   }
@@ -34,12 +34,13 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
     backgroundColor: "pink"
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 30,
+    color: 'red',
     textAlign: 'center',
     margin: 10,
   },
@@ -47,5 +48,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
+    fontSize: 20
   },
 });
