@@ -4,13 +4,12 @@
   --grad2: linear-gradient(180deg, #b3002d00, #b3002d88);
   --grad3: linear-gradient(90deg, #73009a00, #73009a88);
   font-size: 16px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   color: whitesmoke;
 }
 
 /* font-family: 'Quicksand', sans-serif;
 font-family: 'Rubik', sans-serif; */
-
 
 body {
   height: 100vh;
@@ -29,10 +28,11 @@ body {
 }
 
 main {
-  padding: 24px;
+  padding: 12px;
 }
 
-main, main>div {
+main,
+main > div {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -57,19 +57,19 @@ main, main>div {
 }
 
 h1 {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 2.4rem;
   margin: 6px;
 }
 
 h2 {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 1.6rem;
   margin: 8px 0 4px 0;
 }
 
 p {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   /* color: whitesmoke; */
   font-size: 1.2rem;
   margin: 4px 0;
@@ -94,7 +94,6 @@ button {
   justify-content: space-evenly;
   width: 100%;
 }
-
 
 /* h1:nth-child(3) {
   text-decoration-color: red;

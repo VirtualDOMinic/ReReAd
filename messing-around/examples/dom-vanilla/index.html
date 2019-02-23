@@ -5,54 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>gradient</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://fonts.googleapis.com/css?family=Quicksand|Rubik" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Quicksand|Rubik"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <!-- <script src="main.js"></script> -->
   </head>
   <body>
-    <!-- <div id="grad1">1</div>
-    <div id="grad2">2</div>
-    <div id="grad3">3</div> -->
     <main>
-      <h1 onclick="(() => {updateBgPos(0, 0)})()"><span id="re1">re</span><span id="re2">re</span><span id="ad">ad</span></h1>
+      <h1 id="title">
+        <span id="re1">re</span><span id="re2">re</span><span id="ad">ad</span>
+      </h1>
       <div>
         <div class="center-text">
-        <h2>Reflect</h2>
-        <p>Reflect on how your habits affect your ambitions, and on what motivates you.</p>
-      </div>
-      <div class="center-text">
-        <h2>Remind</h2>
-        <p>Regularly remind yourself of your reasons for pursuing good habits and avoiding the bad.</p>
-      </div>
-      <div class="center-text">
-        <h2>Advance</h2>
-        <p>Progress towards your goals, bit by bit.</p>
-      </div>
+          <h2>Reflect</h2>
+          <p>
+            Reflect on how your habits affect your ambitions, and on what
+            motivates you.
+          </p>
+        </div>
+        <div class="center-text">
+          <h2>Remind</h2>
+          <p>
+            Regularly remind yourself of your reasons for pursuing good habits
+            and avoiding the bad.
+          </p>
+        </div>
+        <div class="center-text">
+          <h2>Advance</h2>
+          <p>Progress towards your goals, bit by bit.</p>
+        </div>
       </div>
       <div id="navbar">
-          <button onclick="(() => {updateBgPos(0, 100)})()">New Reflection</button>
-          <button onclick="(() => {updateBgPos(100, 100)})()">Remind</button>
-          <button onclick="(() => {updateBgPos(100, 0)})()">Settings</button>
+        <button id="new-reflection">
+          New Reflection
+        </button>
+        <button id="remind-btn">See Reflections</button>
+        <button id="settings-btn">Settings</button>
       </div>
     </main>
 
-    <script>
-      function randomlyUpdateBgPos() {
-        var x = Math.floor(Math.random() * 10) * 10;
-        var y = Math.floor(Math.random() * 10) * 10;
-        return updateBgPos(x, y)
-      }
-
-      function updateBgPos(x, y) {
-        if(arguments.length < 2){
-          return randomlyUpdateBgPos()
-        }
-        document.body.style.backgroundPosition = `${x}% ${y}%`;
-        console.log(document.body.style.backgroundPosition);
-      }
-
-      // setInterval(randomlyUpdateBgPos, 3000);
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>
-
