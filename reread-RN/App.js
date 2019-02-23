@@ -5,6 +5,9 @@ import { View, Text, StyleSheet } from "react-native";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import Home from "./screens/Home";
 import Reflect from "./screens/Reflect";
+import { Provider } from "react-redux";
+// import { addToStore } from "./redux/actions"
+import { store } from "./redux/index";
 
 const screen = Comp => {
   return props => (
@@ -24,7 +27,12 @@ const AppNavigator = createStackNavigator(
   }
 );
 
-export default createAppContainer(AppNavigator);
+const AppContainer = createAppContainer(AppNavigator);
+
+export default () => {
+
+  return <Provider store={store}><AppContainer /></Provider>
+}
 
 const styles = StyleSheet.create({
   container: {

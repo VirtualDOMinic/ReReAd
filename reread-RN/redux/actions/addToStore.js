@@ -1,6 +1,6 @@
 export const ADD_REFLECTION = "ADD_REFLECTION";
 
-export function addReflection(textArr) {
+export const addReflection = () => {
   console.log("addreflectionerino");
-  return { type: ADD_REFLECTION, textArr };
+  return { type: ADD_REFLECTION };
 }
