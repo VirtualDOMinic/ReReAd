@@ -4,15 +4,15 @@ import Button from "../components/Button";
 
 export default class Home extends Component {
   state = {
-    buttonText: "hey",
-    reflections: []
+    reflections: [],
+    userReflection
   };
 
   render() {
     return (
       <View>
         <Text>Hi! What would you like to reflect on?</Text>
-        <Button text={this.state.buttonText} />
+        <Button text={appData.reflectionButtonText} onPress={} />
       </View>
     );
   }
@@ -20,6 +20,7 @@ export default class Home extends Component {
 
 const appData = {
   version: 1,
+  reflectionButtonText: "Add new reflection",
   good: {},
   bad: {
     shortTerm: "Why do you want to do it?",
