@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 import Button from "../components/Button";
+import { connect } from "react-redux";
 
-export default class Home extends Component {
+class Home extends Component {
   state = {
     reflections: [],
     userReflection
@@ -45,3 +46,10 @@ const userReflection = {
     alternatives: []
   }
 };
+
+const mapStateToProps = state => {
+  const { reflection } = state;
+  return { reflection };
+};
+
+export default connect(mapStateToProps)(Home);
