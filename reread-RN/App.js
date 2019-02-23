@@ -9,7 +9,7 @@ import Reflect from "./screens/Reflect";
 const screen = Comp => {
   return props => (
     <View style={styles.container}>
-      <Comp {...props} />
+      <Comp textStyle={styles.text} {...props} />
     </View>
   );
 };
@@ -31,17 +31,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "pink"
+    backgroundColor: "#28112B",
+    padding: 16
   },
   welcome: {
     fontSize: 30,
-    color: "red",
+    color: "#E0D8DE",
     textAlign: "center",
     margin: 10
   },
-  instructions: {
+  text: {
     textAlign: "center",
-    color: "#333333",
+    color: "#E0D8DE",
     marginBottom: 5,
     fontSize: 20
   }
