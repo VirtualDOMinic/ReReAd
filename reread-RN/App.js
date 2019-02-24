@@ -1,11 +1,13 @@
 // In App.js in a new project
 
-import React from "react";
+import React, { Component } from "react";
 import { StyleSheet, View } from "react-native";
 import { createStore } from "redux";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import Home from "./screens/Home";
 import Reflect from "./screens/Reflect";
+import Add from "./screens/Add";
+import EndJourney from "./screens/EndJourney";
 import { Provider } from "react-redux";
 import { reducer } from "./redux/index";
 
@@ -25,7 +27,9 @@ const screen = Comp => {
 const AppNavigator = createStackNavigator(
   {
     Home: screen(Home),
-    Reflect: screen(Reflect)
+    Reflect: screen(Reflect),
+    Add: screen(Add),
+    EndJourney: screen(EndJourney)
   },
   {
     InitialRouteName: "Home"
@@ -40,21 +44,10 @@ export default App
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 50,
     flex: 1,
-    justifyContent: "space-between",
     alignItems: "center",
-    backgroundColor: "pink"
-  },
-  welcome: {
-    fontSize: 30,
-    color: "red",
-    textAlign: "center",
-    margin: 10
-  },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5,
-    fontSize: 20
+    backgroundColor: "#FBF7F7",
+    paddingHorizontal: 30
   }
 });

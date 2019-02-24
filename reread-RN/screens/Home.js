@@ -1,49 +1,34 @@
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import { Platform, StyleSheet, View } from "react-native";
 import Button from "../components/Button";
 import { connect } from "react-redux";
+import Text from "../components/Text"
+import { appData } from "../appData"
 
 class Home extends Component {
   render() {
+    const { navigation, reflections } = this.props
+    console.log('reflections,', reflections.length > 0 && reflections.map((item, index) => (
+      item
+    )))
     return (
       <View>
+        <Text>Hello! Welcome to ReReAd</Text>
+        <Text>What would you like to reflect on?</Text>
+        {reflections.length > 0 && reflections.map((item, index) => (
+          <Button
+            key={index + item.title}
+            text={item.title}
+            onPress={() => navigation.navigate("Reflect", { number: index })}
+          />
+        ))}
         <Button
           text={appData.reflectionButtonText}
-          onPress={() => this.props.navigation.navigate("Reflect")}
-        />
-        <Button
-          text="state"
-          onPress={() => console.log(this.props.reflect)}
+          onPress={() => navigation.navigate("Add")}
         />
       </View>
     );
   }
 }
 
-export default connect(state => ({ reflect: state.reflect }))(Home);
-
-
-const appData = {
-  version: 1,
-  reflectionButtonText: "Add new reflection",
-  good: {},
-  bad: {
-    shortTerm: "Why do you want to do it?",
-    later: "Would you still feel the benefits a few hours after?",
-    longTerm:
-      "How would your life be different if you avoided this for a year?",
-    alternatives: "What are the alternatives"
-  }
-};
-
-const userReflection = {
-  version: 0,
-  title: "",
-  type: "bad",
-  questionsAnswers: {
-    shortTerm: [],
-    later: [],
-    longTerm: [],
-    alternatives: []
-  }
-};
+export default connect(state => ({ reflections: state.reflect }))(Home);
