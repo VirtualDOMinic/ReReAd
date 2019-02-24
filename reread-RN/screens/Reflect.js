@@ -4,34 +4,25 @@ import { View, Text, StyleSheet } from "react-native";
 import { addReflection } from "../redux/actions/addToStore";
 import { connect } from "react-redux";
 
-const Reflect = (props) =>
+const Reflect = props =>
   (
     <>
-      <Text>Dummy text here! REFLECT PLS</Text>
-      <Text>Dummy text here! REFLECT PLS</Text>
-      <Text>Dummy text here! REFLECT PLS</Text>
-      <Text>Dummy text here! REFLECT PLS</Text>
       <Button
-        text="hello"
-        onPress={() => console.log(props.state)}
+        text="state"
+        onPress={() => console.log(props.reflect)}
       />
-      <Text>Dummy text here! REFLECT PLS</Text>
       <Button
         text="dispatch"
-        onPress={() => props.adddd()}
+        onPress={() => props.addReflection()}
       />
     </>
   );
 
-const mapDispatchToProps = {
-  adddd: addReflection,
-}
 
-
-const mapStateToProps = function (state) {
-  return {
-    state
+export default connect(
+  state => ({
+    reflect: state.reflect
+  }), {
+    addReflection,
   }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Reflect);
+)(Reflect);

@@ -4,35 +4,23 @@ import Button from "../components/Button";
 import { connect } from "react-redux";
 
 class Home extends Component {
-  state = {
-    reflections: [],
-    userReflection
-  };
-
   render() {
     return (
       <View>
-        <Text>Hi! What would you like to reflect on?</Text>
         <Button
           text={appData.reflectionButtonText}
           onPress={() => this.props.navigation.navigate("Reflect")}
         />
         <Button
-          text="press me"
-          onPress={() => console.log(this.props.state)}
+          text="state"
+          onPress={() => console.log(this.props.reflect)}
         />
       </View>
     );
   }
 }
 
-const mapStateToProps = function (state) {
-  return {
-    state
-  }
-}
-
-export default connect(mapStateToProps)(Home);
+export default connect(state => ({ reflect: state.reflect }))(Home);
 
 
 const appData = {

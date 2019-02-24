@@ -1,9 +1,8 @@
-export const addToStore = (state = {}, action) => {
+export const addToStore = (state = { reflect: { added: false } }, action) => {
   console.log('ACTION TYPE', action.type);
   switch (action.type) {
     case "ADD_REFLECTION":
       return {
-        ...state,
         added: true
       };
     default:

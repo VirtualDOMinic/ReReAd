@@ -1,19 +1,18 @@
 // In App.js in a new project
 
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { combineReducers, createStore, applyMiddleware } from "redux";
+import { StyleSheet, View } from "react-native";
+import { createStore } from "redux";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import Home from "./screens/Home";
 import Reflect from "./screens/Reflect";
 import { Provider } from "react-redux";
-// import { addToStore } from "./redux/actions"
 import { reducer } from "./redux/index";
-import logger from 'redux-logger'
 
-
-// export const store = createStore(reducer);
-const store = createStore(reducer, applyMiddleware(logger))
+// Redux store
+const store = createStore(reducer, {},
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 const screen = Comp => {
   return props => (
@@ -35,10 +34,9 @@ const AppNavigator = createStackNavigator(
 
 const AppContainer = createAppContainer(AppNavigator);
 
-export default () => {
+const App = () => <Provider store={store}><AppContainer /></Provider>
 
-  return <Provider store={store}><AppContainer /></Provider>
-}
+export default App
 
 const styles = StyleSheet.create({
   container: {
