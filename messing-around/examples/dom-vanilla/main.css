@@ -38,6 +38,7 @@ main > div {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  transition: display 0.3s ease-in;
 }
 
 .center-text {
@@ -60,6 +61,7 @@ h1 {
   font-family: "Rubik", sans-serif;
   font-size: 2.4rem;
   margin: 6px;
+  letter-spacing: 2px;
 }
 
 h2 {
