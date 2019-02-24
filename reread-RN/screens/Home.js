@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View } from "react-native";
 import Button from "../components/Button";
-import { Provider } from "react-redux";
-import { store } from "../redux/index";
+import { connect } from "react-redux";
 
-export default class Home extends Component {
+class Home extends Component {
   state = {
     reflections: [],
     userReflection
@@ -18,10 +17,23 @@ export default class Home extends Component {
           text={appData.reflectionButtonText}
           onPress={() => this.props.navigation.navigate("Reflect")}
         />
+        <Button
+          text="press me"
+          onPress={() => console.log(this.props.state)}
+        />
       </View>
     );
   }
 }
+
+const mapStateToProps = function (state) {
+  return {
+    state
+  }
+}
+
+export default connect(mapStateToProps)(Home);
+
 
 const appData = {
   version: 1,

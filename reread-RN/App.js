@@ -2,12 +2,18 @@
 
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { combineReducers, createStore, applyMiddleware } from "redux";
 import { createStackNavigator, createAppContainer } from "react-navigation";
 import Home from "./screens/Home";
 import Reflect from "./screens/Reflect";
 import { Provider } from "react-redux";
 // import { addToStore } from "./redux/actions"
-import { store } from "./redux/index";
+import { reducer } from "./redux/index";
+import logger from 'redux-logger'
+
+
+// export const store = createStore(reducer);
+const store = createStore(reducer, applyMiddleware(logger))
 
 const screen = Comp => {
   return props => (
